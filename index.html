@@ -1114,6 +1114,151 @@
                 padding-top: 100px;
             }
         }
+
+        /* Projects Section Styles */
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background: linear-gradient(135deg, rgba(135, 206, 235, 0.1), rgba(180, 215, 255, 0.15));
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid rgba(135, 206, 235, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 40px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(135, 206, 235, 0.3);
+        }
+
+        .project-card-purple:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+        }
+
+        .project-screenshot {
+            background: linear-gradient(135deg, #87ceeb, #b4d7ff);
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .project-screenshot img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-screenshot-placeholder {
+            text-align: center;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-info h3 {
+            font-size: 2rem;
+            color: #4a90e2;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            font-size: 1.05rem;
+            color: #777;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tech-badge {
+            background: linear-gradient(135deg, #87ceeb, #b4d7ff);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(135, 206, 235, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-github {
+            background: linear-gradient(135deg, #24292e, #444d56);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(36, 41, 46, 0.3);
+        }
+
+        .btn-github:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(36, 41, 46, 0.4);
+        }
+
+        .btn-live {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-live:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .github-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Responsive project cards */
+        @media (max-width: 968px) {
+            .project-card {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .project-screenshot {
+                min-height: 250px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1123,6 +1268,7 @@
             <div class="nav-center">
                 <a href="#home" class="nav-btn active" onclick="scrollToSection('home', this)">🏠 Home</a>
                 <a href="#about" class="nav-btn" onclick="scrollToSection('about', this)">👤 About Me</a>
+                <a href="#projects" class="nav-btn" onclick="scrollToSection('projects', this)">💼 Projects</a>
                 <a href="#hobbies" class="nav-btn" onclick="scrollToSection('hobbies', this)">🎨 Hobbies</a>
                 <a href="#games" class="nav-btn" onclick="scrollToSection('games', this)">🎮 Games</a>
                 <a href="#contact" class="nav-btn" onclick="scrollToSection('contact', this)">📧 Contact</a>
@@ -1202,7 +1348,88 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <!-- Projects Section -->
+        <div class="about-section" id="projects">
+            <h2 class="about-title">💼 My Projects</h2>
+
+            <!-- Personal Portfolio Website Project Card -->
+            <div class="project-card">
+                <div class="project-screenshot">
+                    <img src="img/profile.png" alt="Personal Portfolio Website Screenshot" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);" />
+                </div>
+
+                <div class="project-info">
+                    <div>
+                        <h3>Personal Portfolio Website</h3>
+                        <p class="project-description">
+                            A beautiful and interactive personal portfolio website showcasing my journey as a young developer. Features smooth scroll navigation, responsive design with gorgeous gradient themes, and dedicated sections for my hobbies, gaming interests, and contact information. Built entirely from scratch using vanilla web technologies!
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Responsive Design</span>
+                            <span class="tech-badge">Git</span>
+                            <span class="tech-badge">GitHub</span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/CodeCubCA/profile-website-Candyna-Codecub" target="_blank" class="project-btn btn-github">
+                            <svg class="github-icon" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                            </svg>
+                            Repository
+                        </a>
+                        <a href="https://Candyna.codecub.org" target="_blank" class="project-btn btn-live">
+                            🚀 Live Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Music Adviser AI Chatbox Project Card -->
+            <div class="project-card project-card-purple" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.15)); border: 2px solid rgba(139, 92, 246, 0.3); margin-top: 40px;">
+                <div class="project-screenshot" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
+                    <img src="img/chatbox.png" alt="Music Adviser AI Assistant Screenshot" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);" />
+                </div>
+
+                <div class="project-info">
+                    <div>
+                        <h3 style="color: #a78bfa;">Music Adviser</h3>
+                        <p class="project-description">
+                            An intelligent AI-powered chatbot built with Streamlit and Groq API. Features real-time conversation, context awareness, and deployed to the cloud with CI/CD. Perfect for students seeking instant help with homework, explanations, and learning support across various subjects.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);">Python</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #ef4444, #f87171);">Streamlit</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">Groq API</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #10b981, #34d399);">Git</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #ec4899, #f472b6);">Streamlit Cloud</span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/CodeCubCA/ai-chatbox-Candyna-CodeCub" target="_blank" class="project-btn btn-github">
+                            <svg class="github-icon" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                            </svg>
+                            Repository
+                        </a>
+                        <a href="https://ai-chatbox-Candyna-codecub.streamlit.app" target="_blank" class="project-btn" style="background: linear-gradient(135deg, #8b5cf6, #ec4899); color: #fff; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);">
+                            🤖 Try Live
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hobbies Section -->
+        <div class="about-section">
             <div class="hobbies-favorites" id="hobbies">
                 <h2 class="about-title">My Hobbies & Interests</h2>
 
@@ -1499,7 +1726,7 @@
 
         // Update active navigation button on scroll
         window.addEventListener('scroll', function() {
-            const sections = ['home', 'about', 'hobbies', 'games', 'contact'];
+            const sections = ['home', 'about', 'projects', 'hobbies', 'games', 'contact'];
             const scrollPos = window.scrollY + 150; // Offset for nav height
 
             sections.forEach(sectionId => {
